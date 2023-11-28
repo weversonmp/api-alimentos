@@ -44,19 +44,19 @@ class Foods extends ResourceController
             try {
                 if ($this->foodsModel->insert($newFood)) {
                     $response = [
-                        'response' => 'success',
+                        'response' => 'Success',
                         'msg' => 'Produto adicionado com sucesso'
                     ];
                 } else {
                     $response = [
-                        'response' => 'error',
+                        'response' => 'Error',
                         'msg' => 'Erro ao salvar o alimento',
                         'errors' => $this->foodsModel->errors()
                     ];
                 }
             } catch (Exception $e) {
                 $response = [
-                    'response' => 'error',
+                    'response' => 'Error',
                     'msg' => 'Erro ao salvar o alimento',
                     'errors' => [
                         'exception' => $e->getMessage()
